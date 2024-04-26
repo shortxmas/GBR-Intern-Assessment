@@ -1,0 +1,22 @@
+{
+  "name": "frameworks-libraries",
+  "version": "1.0.0",
+  "description": "Choose a popular PHP framework (e.g., Laravel) or a Node.js framework (e.g., Express.js) and implement a simple CRUD (Create, Read, Update, Delete) application using the chosen framework.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -p tsconfig.json",
+    "start": "nodemon dist/index.js ",
+    "dev": "tsc -p tsconfig.json --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
