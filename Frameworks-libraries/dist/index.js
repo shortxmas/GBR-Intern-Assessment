@@ -6,6 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 // Create Express app
 const app = (0, express_1.default)();
+// Initialize mock database with an array of todo objects
+let serverData = [];
 // Define home route
 app.get('/', (req, res) => {
     res.send('Hello world!');
