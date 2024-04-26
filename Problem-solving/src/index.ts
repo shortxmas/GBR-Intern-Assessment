@@ -33,38 +33,38 @@ const fetchData = async (): Promise<Image[]> => {
   }
 };
 
-// 
+// Function that uses binary search algorithm to find the object index at which targetID is
 const findImageById = (data: Image[], targetId: number): number => {
-   let left = 0;
-   let right = data.length - 1;
- 
-   while (left <= right) {
-     const mid = Math.floor((left + right) / 2);
-     // If the targetId is found at the mid index, return mid
-     if (data[mid].id === targetId) {
-       return mid;
-     }
-     // If the targetId is less than the id at mid, search the left half
-     else if (targetId < data[mid].id) {
-       right = mid - 1;
-     }
-     // If the targetId is greater than the id at mid, search the right half
-     else {
-       left = mid + 1;
-     }
-   }
-   // If the targetId is not found in the array, return -1
-   return -1;
- };
+  let left = 0;
+  let right = data.length - 1;
 
- const getRandomWholeNumber = (min: number, max: number): number => {
-   return Math.floor(Math.random() * (max - min + 1)) + min;
- };
+  while (left <= right) {
+    const mid = Math.floor((left + right) / 2);
+    // If the targetId is found at the mid index, return mid
+    if (data[mid].id === targetId) {
+      return mid;
+    }
+    // If the targetId is less than the id at mid, search the left half
+    else if (targetId < data[mid].id) {
+      right = mid - 1;
+    }
+    // If the targetId is greater than the id at mid, search the right half
+    else {
+      left = mid + 1;
+    }
+  }
+  // If the targetId is not found in the array, return -1
+  return -1;
+};
+
+// Function to get random whole number
+const getRandomWholeNumber = (min: number, max: number): number => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
 
 // Call fetch data then call findImageById function, logging out at which index the Image id is found in the array
 fetchData().then((data) => {
-  for(let i =0;i<11;i++){
-   console.log(findImageById(data,getRandomWholeNumber(1, 5000)))
+  for (let i = 0; i < 11; i++) {
+    console.log(findImageById(data, getRandomWholeNumber(1, 5000)));
   }
-
 });
