@@ -18,3 +18,4 @@ Choose a popular PHP framework (e.g., Laravel) or a Node.js framework (e.g., Exp
 4. In terminal two, run ``npm run start`` which will start the server and restart the server upon change to compiled TypeScript source files
 
 **Postman was used to send requests and test the endpoint CRUD functionalities of the application**
+The download and infromation for Postmon software can be found [here](https://www.postman.com)
