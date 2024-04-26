@@ -18,7 +18,6 @@ let todoId: number = 1;
 // Get length of todos data endpoint
 todoRouter.get("/length", (req, res) => {
   try {
-    console.log("Hello?");
     res.status(200).json({ length: serverData.length });
   } catch (error: any) {
     res.status(500).send("A server error has occurred!" + error);
