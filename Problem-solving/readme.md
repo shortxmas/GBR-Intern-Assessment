@@ -10,7 +10,7 @@ Searching for a specific piece of data by ID when fetching large amounts of data
 
 ## Solution
 
-Create a binary search function that given and int ID as a paramter, will search through data fetched from a rest API and print the data with that ID.
+Create a binary search function that given and int ID as a paramter, will search through data fetched from a rest API and print the index of the data object with that ID
 
 ## Running the project
 
