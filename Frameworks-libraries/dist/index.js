@@ -21,21 +21,29 @@ app.get("/todos", (req, res) => {
 });
 // Post a new todo endpoint
 app.post("/todos", (req, res) => {
+    // Error catch, return status code 500 if error is thrown
     try {
+        // Set incoming todo object
         const incomingTodo = req.body;
+        // Check if description and status are undefined and if the types are not strings and return status 400 if true, otherwise continue to adding the todo
         if (incomingTodo.description == undefined ||
-            incomingTodo.status == undefined) {
+            incomingTodo.status == undefined ||
+            typeof req.body.description !== "string" ||
+            typeof req.body.status !== "string") {
             res
                 .status(400)
                 .send("The todo id, description or status is missing or the type todo attribute(s) type is wrong.");
         }
         else {
+            // Create the todo object to be added with incoming todo object description and status and automatic id setting
             const newTodo = {
                 id: serverData.length + 1,
                 description: incomingTodo.description,
                 status: incomingTodo.status,
             };
+            // Push todo object to fake database
             serverData.push(newTodo);
+            // Send status code 201 resource created
             res.status(201).send("Todo has been added!");
         }
     }
