@@ -19,6 +19,26 @@ app.get("/", (req, res) => {
 app.get("/todos", (req, res) => {
     res.status(200).json(serverData);
 });
+// Get todo by id endpoint
+app.get("/todos/:id", (req, res) => {
+    try {
+        // Get  todo ID from the URL parameters
+        const todoId = parseInt(req.params.id);
+        // Try to find todo with ID and set to todo variable
+        const todo = serverData.find((todo) => todo.id === todoId);
+        // If todo with the ID isn't found, send 404 status code not found.
+        if (!todo) {
+            return res.status(404).send("Todo not found");
+        }
+        // Otherwise, send todo object as json
+        else {
+            res.status(200).json({ todo });
+        }
+    }
+    catch (error) {
+        res.status(500).send("A server error has occured!" + error);
+    }
+});
 // Post a new todo endpoint
 app.post("/todos", (req, res) => {
     // Error catch, return status code 500 if error is thrown
@@ -48,7 +68,7 @@ app.post("/todos", (req, res) => {
         }
     }
     catch (error) {
-        res.status(500).send("A server error has occured!");
+        res.status(500).send("A server error has occured!" + error);
     }
 });
 // Start the server
