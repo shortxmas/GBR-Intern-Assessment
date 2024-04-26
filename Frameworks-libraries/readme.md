@@ -7,8 +7,14 @@ Choose a popular PHP framework (e.g., Laravel) or a Node.js framework (e.g., Exp
 ## Project structure
 
 - The chosen technologies are TypeScript Node.js with Express.js
-- The mock database will be an serverside array of ToDo objects
-
+- The mock database will be an serverside array of ToDo objects with the following interface definition
+```
+interface ToDo {
+  id: number;
+  description: string;
+  status: string;
+}
+```
 ## Running the project
 
 **This project uses TypeScript for static typing and Nodemon NPM dependency for automatic development server restarting.**
