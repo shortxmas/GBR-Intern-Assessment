@@ -16,6 +16,7 @@ Choose a popular PHP framework (e.g., Laravel) or a Node.js framework (e.g., Exp
 2. Open two terminals both CD'd into the Problem-solving task subfolder, one terminal for nodemon server restarting and one for TypeScript automatic compiling
 3. In terminal one, run ``npm run dev`` which will start the automatic TypeScript compilation upon saves to source TypeScript files
 4. In terminal two, run ``npm run start`` which will start the server and restart the server upon change to compiled TypeScript source files
+5. Test endpoints using Postman or other API testing software
 
 **Postman was used to send requests and test the endpoint CRUD functionalities of the application**
 The download and infromation for Postmon software can be found [here](https://www.postman.com)
