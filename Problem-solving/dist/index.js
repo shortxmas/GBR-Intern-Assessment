@@ -31,7 +31,7 @@ const fetchData = () => __awaiter(void 0, void 0, void 0, function* () {
         return [];
     }
 });
-// 
+// Function that uses binary search algorithm to find the object index at which targetID is
 const findImageById = (data, targetId) => {
     let left = 0;
     let right = data.length - 1;
@@ -53,6 +53,7 @@ const findImageById = (data, targetId) => {
     // If the targetId is not found in the array, return -1
     return -1;
 };
+// Function to get random whole number
 const getRandomWholeNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
